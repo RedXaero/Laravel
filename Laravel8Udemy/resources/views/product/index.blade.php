@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+    <a class="btn btn-success" href="{{ route('products.create') }}">Create</a>
+
     @if (empty($products))
         <div class="alert alert-warning">
             No hay productos en este momento
@@ -17,6 +19,8 @@
                         <th>Price</th>
                         <th>Stock</th>
                         <th>Status</th>
+                        <th>Actions</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +32,8 @@
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->stock }}</td>
                             <td>{{ $product->status }}</td>
+                            <td> <a class="btn btn-link" href="{{ route('products.show', ['product' => $product->id]) }}">Show</a> </td>
+                            <td> <a class="btn btn-link" href="{{ route('products.edit', ['product' => $product->id]) }}">Edit</a> </td>
                         </tr>
                     @endforeach
                 </tbody>
