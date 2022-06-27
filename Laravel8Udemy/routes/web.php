@@ -17,3 +17,4 @@ use \App\Http\Controllers\ProductController;
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/products', [ProductController::class, 'index'])->name('productsList');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('productsList');
+Route::get('profile', 'ProfileController@edit')->name('profile.edit');
